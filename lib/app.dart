@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ostad_2/ui/screens/main_bottom_nav_screen.dart';
 import 'package:ostad_2/ui/screens/splash_screen.dart';
 
 class TaskManager extends StatelessWidget {
@@ -16,10 +17,10 @@ class TaskManager extends StatelessWidget {
           border: OutlineInputBorder(
               borderSide: BorderSide.none
           ),
-        )
+        ),
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: MainBottomNavScreen(),
     );
   }
 }

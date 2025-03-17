@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:ostad_2/ui/screens/main_bottom_nav_screen.dart';
 import 'package:ostad_2/ui/screens/register_screen.dart';
 import 'package:ostad_2/ui/widget/screen_background.dart';
 import 'forgot_password_verify_email_screen.dart';
@@ -17,7 +18,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   bool _obscureText = true;
 
-
+    void _tabSubmitButton(){
+      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>MainBottomNavScreen()), (predicate)=>false);
+    }
 
   void tabSignUpButton(){
     Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterScreen()));
@@ -75,14 +78,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 10,),
-              ElevatedButton(onPressed: (){},
+              ElevatedButton(onPressed: _tabSubmitButton,
                   style: ElevatedButton.styleFrom(
-                    fixedSize: Size.fromWidth(double.maxFinite),
-                    backgroundColor: Colors.green,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7)
-                    )
+                      fixedSize: Size.fromWidth(double.maxFinite),
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(7)
+                      )
                   ),
                   child: Icon(CupertinoIcons.arrow_right_circle)),
               SizedBox(height: 50,),
